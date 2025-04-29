@@ -7,13 +7,18 @@ from functools import lru_cache
 from agents import (
     Agent, Runner, function_tool,
     GuardrailFunctionOutput, input_guardrail, TResponseInputItem, RunContextWrapper,
-    InputGuardrailTripwireTriggered
+    InputGuardrailTripwireTriggered, MaxTurnsExceeded, set_trace_processors, set_default_openai_key
 )
-from agents import set_default_openai_key
+import weave
+from weave.integrations.openai_agents.openai_agents import WeaveTracingProcessor
 from configs import settings
 from custom_logger import get_logger
+from common.utils import create_or_update_prompt
 from agent_service.weather.schemas import OpenWeatherCityInfos, NonKoreanOutput
-from agent_service.weather.prompts import get_weather_prompt
+from agent_service.weather.prompts import get_weather_prompt, weather_agent_guardrail_prompt
+weave.init(
+    project_name="weather_agent")
+set_trace_processors([WeaveTracingProcessor()])
 
 logger = get_logger(__name__)
 
@@ -44,6 +49,7 @@ def datetime_to_unix(dt: datetime) -> int:
 
 
 @function_tool
+@weave.op()
 def get_current_weather(city_name: str):
     if not check_correct_city_name(city_name):
         return "올바른 도시 이름을 입력해주세요."
@@ -58,22 +64,8 @@ def get_current_weather(city_name: str):
 
 
 @function_tool
-def get_forecast_weather(city_name: str):
-    if not check_correct_city_name(city_name):
-        return "올바른 도시 이름을 입력해주세요."
-    url = f"{BASE_URL}/forecast"
-    params = {
-        "q": city_name,
-        "appid": API_KEY,
-        "units": "metric",
-    }
-    response = requests.get(url, params=params)
-    print(response.text, "response.text")
-    return response.json()
-
-
-@function_tool
-def get_historical_weather(city_name: str, target_datetime: str):
+@weave.op()
+def get_weather_with_time(city_name: str, target_datetime: str):
     if not check_correct_city_name(city_name):
         return "올바른 도시 이름을 입력해주세요."
     city_info = load_city_list().KR[city_name]
@@ -93,10 +85,11 @@ def get_historical_weather(city_name: str, target_datetime: str):
 instructions = get_weather_prompt(
     kor_city_list=list(load_city_list().KR.keys()),
 )
+guardrail_prompt = weather_agent_guardrail_prompt()
 
 guardrails_non_korean = Agent(
     name="guardrails_non_korean",
-    instructions=f"날씨정보 요청은 대한민국 도시만 가능합니다.",
+    instructions=guardrail_prompt,
     output_type=NonKoreanOutput,
     model="gpt-4.1-nano",
 )
@@ -107,30 +100,39 @@ async def non_korean_guardrail(
     ctx: RunContextWrapper[None], agent: Agent, input: str | list[TResponseInputItem]
 ) -> GuardrailFunctionOutput:
     result = await Runner.run(guardrails_non_korean, input, context=ctx.context)
-    print(result.final_output, "result.final_output")
     return GuardrailFunctionOutput(
         output_info=result.final_output, 
         tripwire_triggered=not result.final_output.is_korea_city,
     )
 
-weather_agent = Agent(
-    name="weather_agent",
-    handoff_description="날씨 정보를 제공하는 에이전트",
-    instructions=instructions,
-    tools=[get_current_weather, get_forecast_weather, get_historical_weather],
-    input_guardrails=[non_korean_guardrail],
-    model="gpt-4.1-nano",
-)
+async def weather_agent_runner(input: str , model: str = "gpt-4.1-nano"):
+    weather_agent = Agent(
+        name="weather_agent",
+        handoff_description="날씨 정보를 제공하는 에이전트",
+        instructions=instructions,
+        tools=[get_current_weather, get_weather_with_time],
+        input_guardrails=[non_korean_guardrail],
+        model=model,
+    )    
+    try:
+        result = await Runner.run(weather_agent, input, max_turns=3)
+        return result.final_output
+    except InputGuardrailTripwireTriggered:
+        return "한국 도시 이름을 입력해주세요."
+    except MaxTurnsExceeded:
+        return "최대 턴 수를 초과했습니다."
 
 
 async def main():
     set_default_openai_key(settings.openai_api_key)
+    create_or_update_prompt(weave, "main_weather_agent_prompt", instructions, "날씨 정보를 제공하는 main prompt")
+    create_or_update_prompt(weave, "guardrail_weather_agent_prompt", guardrail_prompt, "guardrail prompt")
+    
     try:
         result = await Runner.run(
             starting_agent=weather_agent,
-            input="내일 seoul 오후 3시 날씨 알려줘",
+            input="서울과 부산 중 어디가 더 따뜻해?",
         )
-        print(result.input)
         print(result.final_output)
     except InputGuardrailTripwireTriggered:
         print("Non korean guardrail tripped")
