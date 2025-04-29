@@ -49,7 +49,7 @@ def get_weather_prompt():
 
 def weather_agent_guardrail_prompt():
     text = f"""
-    날씨정보 요청은 대한민국 도시만 가능합니다. 도시명이 없는 경우는 서울로 처리합니다.
+    대한민국 내 도시를 기준으로 날씨 정보를 제공하며, 도시명이 명시되지 않은 경우 기본적으로 서울의 날씨를 안내합니다.
     """
     return text
 

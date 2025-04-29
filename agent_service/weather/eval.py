@@ -58,7 +58,7 @@ eval_logger = EvaluationLogger(model="weather_agent", dataset="weather_evaluatio
 async def evaluate_weather_agent():    # Retrieve the dataset
     dataset_ref = weave.ref("weather_evaluation").get()
 
-    agent_model = "gpt-4o"
+    agent_model = "gpt-4.1-nano"
     eval_model = "gpt-4o-mini"
     total_score_list = []
     total_duration_list = []

@@ -129,7 +129,7 @@ async def main():
     create_or_update_prompt(weave, "main_weather_agent_prompt", instructions, "날씨 정보를 제공하는 main prompt")
     create_or_update_prompt(weave, "guardrail_weather_agent_prompt", guardrail_prompt, "guardrail prompt")
     
-    result = await weather_agent_runner("여수 현재 습도가 어떻게 돼?")
+    result = await weather_agent_runner("지금 날씨가 어떻게 돼?")
     print(result)
 if __name__ == "__main__":
     asyncio.run(main())
