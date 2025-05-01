@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     model_config = {"extra": "allow"}
 
     openai_api_key: str = dot_env["OPENAI_API_KEY"]
+    gemini_api_key: str = dot_env["GEMINI_API_KEY"]
     open_weather_api_key: str = dot_env["OPEN_WEATHER_API_KEY"]
     line_channel_access_token: str = dot_env["LINE_CHANNEL_ACCESS_TOKEN"]
     line_channel_secret: str = dot_env["LINE_CHANNEL_SECRET"]

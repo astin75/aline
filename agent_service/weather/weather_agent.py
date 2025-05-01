@@ -10,28 +10,25 @@ from agents import (
 )
 import weave
 from weave.integrations.openai_agents.openai_agents import WeaveTracingProcessor
+
 from configs import settings
 from custom_logger import get_logger
-from common.utils import create_or_update_prompt
+from common.utils import create_or_update_prompt, get_litellm_model
 from agent_service.weather.schemas import NonKoreanOutput, Coordinates
-from agent_service.weather.prompts import get_weather_prompt, weather_agent_guardrail_prompt
+from agent_service.weather.prompts import get_weather_prompt, weather_agent_input_guardrail_prompt
 weave.init(
     project_name="weather_agent")
 set_trace_processors([WeaveTracingProcessor()])
 
 logger = get_logger(__name__)
 
-BASE_URL = "https://api.openweathermap.org/data/2.5"
-ONECALL_URL = "https://api.openweathermap.org/data/3.0/onecall/timemachine"
-API_KEY = settings.open_weather_api_key
 
 instructions = get_weather_prompt()
-guardrail_prompt = weather_agent_guardrail_prompt()
+guardrail_prompt = weather_agent_input_guardrail_prompt()
 
 def datetime_to_unix(dt: datetime) -> int:
     """ datetime to unix timestamp """
     return int(time.mktime(dt.timetuple()))
-
 
 @function_tool
 @weave.op()
@@ -44,10 +41,11 @@ def get_weather_with_time(lat: float, lon: float, target_datetime: str):
         "lat": lat,
         "lon": lon,
         "dt": timestamp,
-        "appid": API_KEY,
+        "appid": settings.open_weather_api_key,
         "units": "metric",
     }
-    response = requests.get(ONECALL_URL, params=params)
+    url = "https://api.openweathermap.org/data/3.0/onecall/timemachine"
+    response = requests.get(url, params=params)
     return response.json()
 
 @function_tool
@@ -85,9 +83,6 @@ async def search_address_to_coordinate(address: str) -> Coordinates | str:
             return Coordinates(lon=result["x"], lat=result["y"])
 
 
-
-
-
 @input_guardrail
 async def non_korean_guardrail( 
     ctx: RunContextWrapper[None], agent: Agent, input: str | list[TResponseInputItem]
@@ -106,30 +101,29 @@ async def non_korean_guardrail(
     
     
 
-async def weather_agent_runner(input: str , model: str = "gpt-4.1-nano"):
+async def weather_agent_runner(input: str , model: str = "openai/gpt-4.1-nano"):
     weather_agent = Agent(
         name="weather_agent",
         handoff_description="날씨 정보를 제공하는 에이전트",
         instructions=instructions,
         tools=[get_weather_with_time, search_address_to_coordinate],
         input_guardrails=[non_korean_guardrail],
-        model=model,
+        model=get_litellm_model(model),
     )    
     try:
         result = await Runner.run(weather_agent, input, max_turns=3)
         return result.final_output
-    except InputGuardrailTripwireTriggered:
-        return "한국 도시 이름을 입력해주세요."
+    except InputGuardrailTripwireTriggered as e:
+        return e.guardrail_result.output.output_info.reason
     except MaxTurnsExceeded:
         return "최대 턴 수를 초과했습니다."
 
 
 async def main():
-    set_default_openai_key(settings.openai_api_key)
     create_or_update_prompt(weave, "main_weather_agent_prompt", instructions, "날씨 정보를 제공하는 main prompt")
     create_or_update_prompt(weave, "guardrail_weather_agent_prompt", guardrail_prompt, "guardrail prompt")
     
-    result = await weather_agent_runner("지금 날씨가 어떻게 돼?")
+    result = await weather_agent_runner("미국 날씨 알려줘", "gemini/gemini-2.0-flash")
     print(result)
 if __name__ == "__main__":
     asyncio.run(main())

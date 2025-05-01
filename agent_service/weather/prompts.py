@@ -8,7 +8,7 @@ def get_weather_prompt():
     당신은 날씨 전문가입니다. 사용자에게 현재 날씨, 날씨 예보, 과거 날씨 데이터를 제공하는 역할을 합니다.
     한국의 도시들에 대한 정보를 가지고 있으며, 사용자의 질문에 따라 적절한 날씨 정보를 제공해야 합니다.
     
-    ## 작업 프로세스
+    ## 작업 프로세스 (도구설명)
     1. 사용자의 질문을 분석하여 search_address_to_coordinate 함수를 호출하여 주소를 좌표로 변환합니다.
     2. search_address_to_coordinate에서 얻은 좌표와 사용자의 질문에서 시간정보를 파악하여
         get_weather_with_time 함수를 호출하여 날씨 정보를 조회합니다.
@@ -47,9 +47,12 @@ def get_weather_prompt():
     """
     return text
 
-def weather_agent_guardrail_prompt():
+def weather_agent_input_guardrail_prompt():
     text = f"""
     대한민국 내 도시를 기준으로 날씨 정보를 제공하며, 도시명이 명시되지 않은 경우 기본적으로 서울의 날씨를 안내합니다.
+    
+    is_korea_city: 도시명이 대한민국 내 도시인지 여부
+    reason: 도시명이 대한민국 내 도시가 아닌 이유를 친절하게 설명하고, 대한민국 도시만 가능하다고 안내해주세요.
     """
     return text
 

@@ -1,10 +1,15 @@
 import weave
 import asyncio
 import time
+import openai
 from weave.flow.eval_imperative import EvaluationLogger
 from common.utils import create_or_update_dataset
 from common.eval_utils import eval_relevancy_score, get_average_score
 from agent_service.weather.weather_agent import weather_agent_runner
+from custom_logger import get_logger
+
+logger = get_logger(__name__)
+
 weave.init(project_name="weather_agent")
 # 날씨 에이전트 평가를 위한 테스트 케이스
 sentence_list = [
@@ -58,22 +63,34 @@ eval_logger = EvaluationLogger(model="weather_agent", dataset="weather_evaluatio
 async def evaluate_weather_agent():    # Retrieve the dataset
     dataset_ref = weave.ref("weather_evaluation").get()
 
-    agent_model = "gpt-4.1-nano"
-    eval_model = "gpt-4o-mini"
+    agent_model = "openai/gpt-4.1-nano"
+    eval_model = "openai/gpt-4o-mini"
     total_score_list = []
     total_duration_list = []
     for row in dataset_ref.rows:
-        start_time = time.time()
-        result = await weather_agent_runner(row["question"], agent_model)
-        pred_logger = eval_logger.log_prediction(inputs=row["question"], 
-                                                 output=result)
-        relevancy_score = await eval_relevancy_score(row["question"], result, eval_model)
-        pred_logger.log_score(
-            scorer="relevancy",
-            score=relevancy_score.score,
-        )
-        pred_logger.finish()
-        end_time = time.time()
+        
+        use_model = agent_model
+        for retry in range(3):
+            try:
+                logger.info(f"Evaluating {row['question']} with {use_model}")
+                start_time = time.time()
+                result = await weather_agent_runner(row["question"], use_model)
+                end_time = time.time()
+                pred_logger = eval_logger.log_prediction(inputs=row["question"], 
+                                                        output=result)
+                relevancy_score = await eval_relevancy_score(row["question"], result, eval_model)
+                pred_logger.log_score(
+                    scorer="relevancy",
+                    score=relevancy_score.score,
+                )
+                pred_logger.finish()
+                break
+            except openai.InternalServerError as e:
+                time.sleep(1)
+                use_model = "gemini/gemini-2.0-flash"
+                logger.error(f"Error: {e}, retry: {retry}")
+                continue
+
         total_duration_list.append(end_time - start_time)
         total_score_list.append(relevancy_score.score)
     

@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115.12",
+    "feedparser>=6.0.11",
     "line-bot-sdk>=3.17.1",
     "litellm>=1.67.2",
     "openai-agents>=0.0.13",
