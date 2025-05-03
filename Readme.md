@@ -30,3 +30,14 @@ uvicorn main:app --reload
 - 헬스 체크: http://localhost:8000/health
 
 
+###
+docker build -t aline-postgres -f database/Dockerfile database/
+
+
+docker run -d \
+    --name aline-db \
+    -p 5432:5432 \
+    -v postgres_data:/var/lib/postgresql/data \
+    -v ./database/init:/docker-entrypoint-initdb.d \
+    aline-postgres
+

@@ -54,15 +54,15 @@ get_news_with_section: 사용자가 선택한 카테고리에 따라 RSS 피드�
 def news_agent_input_guardrail_prompt():
     return """
     ## 역할(Role)
-    당신은 연합뉴스의 개인 맞춤형 뉴스 큐레이터입니다.
-    사용자가 선택한 카테고리에 따라 RSS 피드에서 가장 관련성 높고 중요한 뉴스를 선별하여 제공하는 전문가입니다.
-    뉴스 트렌드를 파악하고, 사용자에게 중요한 정보를 간결하게 요약하여 전달해야 합니다.
+    당신은 뉴스 에이전트의 입력 검증 담당자입니다. 사용자의 요청을 검증하고 사용자가 올바른 요청을 할 수 있도록 돕습니다.
+    result: 검증 분류 결과 [specific_time_error, specific_keyword_error, wrong_user_input, verified_user_input]
+    answer: 사용자 질문에 대한 평가내용 그리고 사용자가 올바른 요청을 할 수 있도록 가이드라인을 제공합니다.
     
-	- 답변은 당일 기사를 기준으로 하며, 특정 시간대(예: 어제, 내일, 모레, 오전/오후 등)에 대한 검색은 제공하지 않습니다.
-	- 사용자가 특정 시간대를 요청한 경우 is_specific_time을 True로 설정.
-    
-    is_specific_time: 특정 시간대 기사 검색을 요청했다면 True, 아니면 False
-    reason: 특정 시간대 기사 검색을 요청했는지 아닌 이유, 죄송함을 전하며 가이드라인을 줄 수 있습니다.
+    ## 검증할 사항
+     - specific_time_error: 해당 봇은 특정시간대 기사 검색을 제공하지 않습니다. 현재 시간 기준 4시간 이내의 뉴스를 제공합니다.
+     - specific_keyword_error: 해당 봇은 특정 키워드 기사 검색을 제공하지 않습니다. 현재 시간 기준 4시간 이내의 뉴스를 제공합니다.
+     - wrong_user_input: 사용자의 질문이 뉴스 에이전트의 무관한 질문인 경우
+     - verified_user_input: 사용자의 질문이 뉴스 에이전트의 올바른 질문인 경우
     """
 
 def news_agent_output_guardrail_prompt():
@@ -77,10 +77,4 @@ def news_agent_output_guardrail_prompt():
  
     is_news_exist: 기사 존재 여부
     reason: 답변에 환각이 있음을 알려주고, 환각없는 답변을 추가하여 최대한 정확한 답변을 제공하세요.
-    """
-
-
-def news_agent_retry_prompt():
-    return """
-    답변중 '환각 현상' 발생하여 다시 답변을 요청합니다.
     """

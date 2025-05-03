@@ -21,7 +21,12 @@ class Settings(BaseSettings):
     wandb.login(key=dot_env["WANDB_API_KEY"])
     naver_map_client_id: str = dot_env["NAVER_MAP_CLIENT_ID"]
     naver_map_client_secret: str = dot_env["NAVER_MAP_CLIENT_SECRET"]
-
+    db_port: int = dot_env["DB_PORT"]
+    db_user: str = dot_env["DB_USER"]
+    db_password: str = dot_env["DB_PASSWORD"]
+    db_host: str = "localhost"
+    db_name: str = dot_env["DB_NAME"]
+    
 
 class DevSettings(Settings):
     env: str = "dev"

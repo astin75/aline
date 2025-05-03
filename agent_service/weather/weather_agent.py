@@ -6,15 +6,16 @@ from datetime import datetime
 from agents import (
     Agent, Runner, function_tool,
     GuardrailFunctionOutput, input_guardrail, TResponseInputItem, RunContextWrapper,
-    InputGuardrailTripwireTriggered, MaxTurnsExceeded, set_trace_processors, set_default_openai_key
+    InputGuardrailTripwireTriggered, MaxTurnsExceeded, set_trace_processors 
 )
 import weave
 from weave.integrations.openai_agents.openai_agents import WeaveTracingProcessor
 
 from configs import settings
 from custom_logger import get_logger
+from common.schemas import AgentCommonStatus
 from common.utils import create_or_update_prompt, get_litellm_model
-from agent_service.weather.schemas import NonKoreanOutput, Coordinates
+from agent_service.weather.schemas import NonKoreanOutput, Coordinates, WeatherAgentFinalOutput
 from agent_service.weather.prompts import get_weather_prompt, weather_agent_input_guardrail_prompt
 weave.init(
     project_name="weather_agent")
@@ -100,7 +101,7 @@ async def non_korean_guardrail(
     )
     
     
-
+@weave.op()
 async def weather_agent_runner(input: str , model: str = "openai/gpt-4.1-nano"):
     weather_agent = Agent(
         name="weather_agent",
@@ -110,20 +111,31 @@ async def weather_agent_runner(input: str , model: str = "openai/gpt-4.1-nano"):
         input_guardrails=[non_korean_guardrail],
         model=get_litellm_model(model),
     )    
+    
     try:
         result = await Runner.run(weather_agent, input, max_turns=3)
-        return result.final_output
+        #attribute_callback(weave, {"input": input, "output": result.final_output})
+        return WeatherAgentFinalOutput(
+            answer=result.final_output,
+            status=AgentCommonStatus.success
+        )
     except InputGuardrailTripwireTriggered as e:
-        return e.guardrail_result.output.output_info.reason
+        return WeatherAgentFinalOutput(
+            answer=e.guardrail_result.output.output_info.reason,
+            status=AgentCommonStatus.input_guardrail_tripwire_triggered
+        )
     except MaxTurnsExceeded:
-        return "최대 턴 수를 초과했습니다."
+        return WeatherAgentFinalOutput(
+            answer="최대 턴 수를 초과했습니다.",
+            status=AgentCommonStatus.max_turns_exceeded
+        )
 
 
 async def main():
     create_or_update_prompt(weave, "main_weather_agent_prompt", instructions, "날씨 정보를 제공하는 main prompt")
     create_or_update_prompt(weave, "guardrail_weather_agent_prompt", guardrail_prompt, "guardrail prompt")
     
-    result = await weather_agent_runner("미국 날씨 알려줘", "gemini/gemini-2.0-flash")
+    result = await weather_agent_runner("지금 강북구 날씨알려줘", "gemini/gemini-2.0-flash")
     print(result)
 if __name__ == "__main__":
     asyncio.run(main())
