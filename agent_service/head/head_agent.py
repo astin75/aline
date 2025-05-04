@@ -1,8 +1,7 @@
 import asyncio
-import uuid
 from typing import List
-from datetime import datetime
-from agents import Agent, Runner, trace, set_trace_processors
+from agents import Agent, Runner, WebSearchTool, set_trace_processors, function_tool
+from litellm import acompletion
 import weave
 from weave.integrations.openai_agents.openai_agents import WeaveTracingProcessor
 
@@ -10,7 +9,7 @@ from configs import settings
 from custom_logger import get_logger
 from common.schemas import AgentCommonStatus
 from common.utils import create_or_update_prompt, get_litellm_model
-from agent_service.head_agent.prompts import get_head_agent_prompt
+from agent_service.head.prompts import get_head_agent_prompt
 from agent_service.weather.weather_agent import get_weater_agent
 from agent_service.news.news_agent import get_news_agent
 
@@ -20,6 +19,22 @@ set_trace_processors([WeaveTracingProcessor()])
 instructions = get_head_agent_prompt()
 
 logger = get_logger(__name__)
+
+
+@function_tool(
+    name_override="google_web_search", description_override="Google 웹 검색 도구"
+)
+@weave.op()
+async def google_web_search(query: str) -> str:
+    tools = [{"googleSearch": {}}]
+
+    response = await acompletion(
+        model="gemini/gemini-2.0-flash",
+        messages=[{"role": "user", "content": query}],
+        api_key=settings.gemini_api_key,
+        tools=tools,
+    )
+    return response.choices[0].message.content
 
 
 @weave.op()
@@ -39,7 +54,9 @@ async def head_agent_runner(input: List[dict], model: str = "openai/gpt-4.1-nano
                 tool_name=news_agent.name,
                 tool_description=news_agent.handoff_description,
             ),
+            google_web_search,
         ],
+        model=get_litellm_model(model),
     )
     result = await Runner.run(head_agent, input, max_turns=3)
     return result.final_output
@@ -66,4 +83,4 @@ if __name__ == "__main__":
     asyncio.run(main())
 
 
-# PYTHONPATH=. python agent_service/head_agent/head_agent.py
+# PYTHONPATH=. python agent_service/head/head_agent.py
