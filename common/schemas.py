@@ -1,8 +1,11 @@
 from pydantic import BaseModel, Field
 from enum import Enum
+
+
 class EvaluationScore(BaseModel):
     score: float = Field(description="Score of the evaluation")
-    
+
+
 class RelevancyScore(EvaluationScore):
     pass
 

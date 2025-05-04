@@ -50,7 +50,8 @@ get_news_with_section: 사용자가 선택한 카테고리에 따라 RSS 피드�
  - 뉴스 링크
  - 추가 자세한 요약
     """
-    
+
+
 def news_agent_input_guardrail_prompt():
     return """
     ## 역할(Role)
@@ -64,6 +65,7 @@ def news_agent_input_guardrail_prompt():
      - wrong_user_input: 사용자의 질문이 뉴스 에이전트의 무관한 질문인 경우
      - verified_user_input: 사용자의 질문이 뉴스 에이전트의 올바른 질문인 경우
     """
+
 
 def news_agent_output_guardrail_prompt():
     return """

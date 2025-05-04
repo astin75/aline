@@ -1,4 +1,3 @@
-
 def get_weather_prompt():
     text = f"""
     
@@ -69,6 +68,7 @@ def get_weather_prompt():
     """
     return text
 
+
 def weather_agent_input_guardrail_prompt():
     text = f"""
     대한민국 내 도시를 기준으로 날씨 정보를 제공하며, 도시명이 명시되지 않은 경우 기본적으로 서울의 날씨를 안내합니다.
@@ -77,4 +77,3 @@ def weather_agent_input_guardrail_prompt():
     reason: 도시명이 대한민국 내 도시가 아닌 이유를 친절하게 설명하고, 대한민국 도시만 가능하다고 안내해주세요.
     """
     return text
-

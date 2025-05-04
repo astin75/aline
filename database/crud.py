@@ -171,14 +171,12 @@ async def main():
         for msg in messages:
             print(f"{msg.sender}: {msg.message_text} @@@@@@@@@@@@@@@@@@@")
 
-
         # 대화 삭제 예시
         print("\n대화 삭제 중...")
         if await delete_conversation(4):
             print(f"대화 ID: {1} 삭제 성공")
         else:
             print(f"대화 ID: {1} 삭제 실패")
-
 
     except Exception as e:
         print(f"오류 발생: {str(e)}")

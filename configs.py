@@ -26,7 +26,7 @@ class Settings(BaseSettings):
     db_password: str = dot_env["DB_PASSWORD"]
     db_host: str = "localhost"
     db_name: str = dot_env["DB_NAME"]
-    
+
 
 class DevSettings(Settings):
     env: str = "dev"

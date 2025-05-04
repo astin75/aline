@@ -9,6 +9,7 @@ from custom_logger import get_logger
 
 logger = get_logger(__name__)
 
+
 def create_app(env: str = "dev"):
     app = FastAPI(
         title=f"aline-bot-api-{env}",
@@ -16,7 +17,7 @@ def create_app(env: str = "dev"):
         version="0.1.0",
         root_path=f"/api",
     )
-    
+
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
@@ -24,12 +25,15 @@ def create_app(env: str = "dev"):
         allow_methods=["*"],
         allow_headers=["*"],
     )
-    
+
     return app
+
 
 def add_routes(app: FastAPI):
     app.include_router(user_router)
     app.include_router(conversation_router)
+
+
 app = create_app(settings.env)
 add_routes(app)
 
