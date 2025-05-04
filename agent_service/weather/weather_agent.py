@@ -49,7 +49,7 @@ def datetime_to_unix(dt: datetime) -> int:
 
 @function_tool
 @weave.op()
-def get_weather_with_time(lat: float, lon: float, target_datetime: str):
+async def get_weather_with_time(lat: float, lon: float, target_datetime: str):
     if target_datetime == "present":
         timestamp = datetime_to_unix(datetime.now())
     else:
@@ -62,8 +62,10 @@ def get_weather_with_time(lat: float, lon: float, target_datetime: str):
         "units": "metric",
     }
     url = "https://api.openweathermap.org/data/3.0/onecall/timemachine"
-    response = requests.get(url, params=params)
-    return response.json()
+
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url, params=params) as response:
+            return await response.json()
 
 
 @function_tool

@@ -1,0 +1,2807 @@
+{
+    "소요산": {
+        "station_id": 1001000100,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "동두천": {
+        "station_id": 1001000101,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "보산": {
+        "station_id": 1001000102,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "동두천중앙": {
+        "station_id": 1001000103,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "지행": {
+        "station_id": 1001000104,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "덕정": {
+        "station_id": 1001000105,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "덕계": {
+        "station_id": 1001000106,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "양주": {
+        "station_id": 1001000107,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "녹양": {
+        "station_id": 1001000108,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "가능": {
+        "station_id": 1001000109,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "의정부": {
+        "station_id": 1001000110,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "회룡": {
+        "station_id": 1001000111,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "망월사": {
+        "station_id": 1001000112,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "도봉산": {
+        "station_id": 1007000710,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "도봉": {
+        "station_id": 1001000114,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "방학": {
+        "station_id": 1001000115,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "창동": {
+        "station_id": 1004000412,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "녹천": {
+        "station_id": 1001000117,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "월계": {
+        "station_id": 1001000118,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "광운대": {
+        "station_id": 1067080119,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "석계": {
+        "station_id": 1006000644,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "신이문": {
+        "station_id": 1001000121,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "외대앞": {
+        "station_id": 1001000122,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "회기": {
+        "station_id": 1067080117,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "청량리": {
+        "station_id": 1075075209,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "제기동": {
+        "station_id": 1001000125,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "신설동": {
+        "station_id": 1092004713,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "동묘앞": {
+        "station_id": 1006000636,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "동대문": {
+        "station_id": 1004000421,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "종로5가": {
+        "station_id": 1001000129,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "종로3가": {
+        "station_id": 1005000534,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "종각": {
+        "station_id": 1001000131,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "시청": {
+        "station_id": 1002000201,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "서울": {
+        "station_id": 1065006501,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "남영": {
+        "station_id": 1001000134,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "용산": {
+        "station_id": 1063075110,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "노량진": {
+        "station_id": 1009000917,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "대방": {
+        "station_id": 1094000402,
+        "line_name": "신림선",
+        "subway_id": 1094
+    },
+    "신길": {
+        "station_id": 1005000525,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "영등포": {
+        "station_id": 1001000139,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "신도림": {
+        "station_id": 1002000234,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "구로": {
+        "station_id": 1001000141,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "구일": {
+        "station_id": 1001000142,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "개봉": {
+        "station_id": 1001000143,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "오류동": {
+        "station_id": 1001000144,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "온수": {
+        "station_id": 1007000750,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "역곡": {
+        "station_id": 1001000146,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "소사": {
+        "station_id": 1093004010,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "부천": {
+        "station_id": 1001000148,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "중동": {
+        "station_id": 1001000149,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "송내": {
+        "station_id": 1001000150,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "부개": {
+        "station_id": 1001000151,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "부평": {
+        "station_id": 1001000152,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "백운": {
+        "station_id": 1001000153,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "동암": {
+        "station_id": 1001000154,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "간석": {
+        "station_id": 1001000155,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "주안": {
+        "station_id": 1001000156,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "도화": {
+        "station_id": 1001000157,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "제물포": {
+        "station_id": 1001000158,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "도원": {
+        "station_id": 1001000159,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "동인천": {
+        "station_id": 1001000160,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "인천": {
+        "station_id": 1075075271,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "청산": {
+        "station_id": 1001001001,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "전곡": {
+        "station_id": 1001001002,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "연천": {
+        "station_id": 1001001003,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "광명": {
+        "station_id": 1001075410,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "가산디지털단지": {
+        "station_id": 1007000746,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "독산": {
+        "station_id": 1001080143,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "금천구청": {
+        "station_id": 1001080144,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "석수": {
+        "station_id": 1001080145,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "관악": {
+        "station_id": 1001080146,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "안양": {
+        "station_id": 1001080147,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "명학": {
+        "station_id": 1001080148,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "금정": {
+        "station_id": 1004000443,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "군포": {
+        "station_id": 1001080150,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "당정": {
+        "station_id": 1001080151,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "의왕": {
+        "station_id": 1001080152,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "성균관대": {
+        "station_id": 1001080153,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "화서": {
+        "station_id": 1001080154,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "수원": {
+        "station_id": 1075075245,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "세류": {
+        "station_id": 1001080156,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "병점": {
+        "station_id": 1001080157,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "세마": {
+        "station_id": 1001080158,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "오산대": {
+        "station_id": 1001080159,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "오산": {
+        "station_id": 1001080160,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "진위": {
+        "station_id": 1001080161,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "송탄": {
+        "station_id": 1001080162,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "서정리": {
+        "station_id": 1001080163,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "지제": {
+        "station_id": 1001080164,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "평택": {
+        "station_id": 1001080165,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "성환": {
+        "station_id": 1001080166,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "직산": {
+        "station_id": 1001080167,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "두정": {
+        "station_id": 1001080168,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "천안": {
+        "station_id": 1001080169,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "봉명": {
+        "station_id": 1001080170,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "쌍용(나사렛대)": {
+        "station_id": 1001080171,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "아산": {
+        "station_id": 1001080172,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "탕정": {
+        "station_id": 1001080173,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "배방": {
+        "station_id": 1001080174,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "온양온천": {
+        "station_id": 1001080175,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "신창": {
+        "station_id": 1001080176,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "서동탄": {
+        "station_id": 1001801571,
+        "line_name": "1호선",
+        "subway_id": 1001
+    },
+    "을지로입구": {
+        "station_id": 1002000202,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "을지로3가": {
+        "station_id": 1003000330,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "을지로4가": {
+        "station_id": 1005000535,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "동대문역사문화공원": {
+        "station_id": 1005000536,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "신당": {
+        "station_id": 1006000635,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "상왕십리": {
+        "station_id": 1002000207,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "왕십리": {
+        "station_id": 1075075210,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "한양대": {
+        "station_id": 1002000209,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "뚝섬": {
+        "station_id": 1002000210,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "성수": {
+        "station_id": 1002000211,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "건대입구": {
+        "station_id": 1007000727,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "구의": {
+        "station_id": 1002000213,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "강변": {
+        "station_id": 1002000214,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "잠실나루": {
+        "station_id": 1002000215,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "잠실": {
+        "station_id": 1008000814,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "잠실새내": {
+        "station_id": 1002000217,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "종합운동장": {
+        "station_id": 1009000930,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "삼성": {
+        "station_id": 1002000219,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "선릉": {
+        "station_id": 1075075215,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "역삼": {
+        "station_id": 1002000221,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "강남": {
+        "station_id": 1077000687,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "교대": {
+        "station_id": 1003000340,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "서초": {
+        "station_id": 1002000224,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "방배": {
+        "station_id": 1002000225,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "사당": {
+        "station_id": 1004000433,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "낙성대": {
+        "station_id": 1002000227,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "서울대입구": {
+        "station_id": 1002000228,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "봉천": {
+        "station_id": 1002000229,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "신림": {
+        "station_id": 1094000408,
+        "line_name": "신림선",
+        "subway_id": 1094
+    },
+    "신대방": {
+        "station_id": 1002000231,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "구로디지털단지": {
+        "station_id": 1002000232,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "대림": {
+        "station_id": 1007000744,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "문래": {
+        "station_id": 1002000235,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "영등포구청": {
+        "station_id": 1005000523,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "당산": {
+        "station_id": 1009000913,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "합정": {
+        "station_id": 1006000622,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "홍대입구": {
+        "station_id": 1065006503,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "신촌": {
+        "station_id": 1002000240,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "이대": {
+        "station_id": 1002000241,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "아현": {
+        "station_id": 1002000242,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "충정로": {
+        "station_id": 1005000531,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "용답": {
+        "station_id": 1002002111,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "신답": {
+        "station_id": 1002002112,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "용두": {
+        "station_id": 1002002113,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "도림천": {
+        "station_id": 1002002341,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "양천구청": {
+        "station_id": 1002002342,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "신정네거리": {
+        "station_id": 1002002343,
+        "line_name": "2호선",
+        "subway_id": 1002
+    },
+    "까치산": {
+        "station_id": 1005000518,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "대화": {
+        "station_id": 1003000309,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "주엽": {
+        "station_id": 1003000310,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "정발산": {
+        "station_id": 1003000311,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "마두": {
+        "station_id": 1003000312,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "백석": {
+        "station_id": 1003000313,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "대곡": {
+        "station_id": 1093004005,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "화정": {
+        "station_id": 1003000315,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "원당": {
+        "station_id": 1003000316,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "원흥": {
+        "station_id": 1003000317,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "삼송": {
+        "station_id": 1003000318,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "지축": {
+        "station_id": 1003000319,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "구파발": {
+        "station_id": 1003000320,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "연신내": {
+        "station_id": 1006000614,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "불광": {
+        "station_id": 1006000612,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "녹번": {
+        "station_id": 1003000323,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "홍제": {
+        "station_id": 1003000324,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "무악재": {
+        "station_id": 1003000325,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "독립문": {
+        "station_id": 1003000326,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "경복궁": {
+        "station_id": 1003000327,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "안국": {
+        "station_id": 1003000328,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "충무로": {
+        "station_id": 1004000423,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "동대입구": {
+        "station_id": 1003000332,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "약수": {
+        "station_id": 1006000633,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "금호": {
+        "station_id": 1003000334,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "옥수": {
+        "station_id": 1063075114,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "압구정": {
+        "station_id": 1003000336,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "신사": {
+        "station_id": 1077000684,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "잠원": {
+        "station_id": 1003000338,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "고속터미널": {
+        "station_id": 1009000923,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "남부터미널": {
+        "station_id": 1003000341,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "양재": {
+        "station_id": 1077000688,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "매봉": {
+        "station_id": 1003000343,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "도곡": {
+        "station_id": 1075075217,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "대치": {
+        "station_id": 1003000345,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "학여울": {
+        "station_id": 1003000346,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "대청": {
+        "station_id": 1003000347,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "일원": {
+        "station_id": 1003000348,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "수서": {
+        "station_id": 1075075221,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "가락시장": {
+        "station_id": 1008000817,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "경찰병원": {
+        "station_id": 1003000351,
+        "line_name": "3호선",
+        "subway_id": 1003
+    },
+    "오금": {
+        "station_id": 1005080552,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "당고개": {
+        "station_id": 1004000409,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "상계": {
+        "station_id": 1004000410,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "노원": {
+        "station_id": 1007000713,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "쌍문": {
+        "station_id": 1004000413,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "수유": {
+        "station_id": 1004000414,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "미아": {
+        "station_id": 1004000415,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "미아사거리": {
+        "station_id": 1004000416,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "길음": {
+        "station_id": 1004000417,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "성신여대입구": {
+        "station_id": 1092004711,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "한성대입구": {
+        "station_id": 1004000419,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "혜화": {
+        "station_id": 1004000420,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "명동": {
+        "station_id": 1004000424,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "회현": {
+        "station_id": 1004000425,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "숙대입구": {
+        "station_id": 1004000427,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "삼각지": {
+        "station_id": 1006000628,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "신용산": {
+        "station_id": 1004000429,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "이촌": {
+        "station_id": 1063075111,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "동작": {
+        "station_id": 1009000920,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "총신대입구(이수)": {
+        "station_id": 1007000736,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "남태령": {
+        "station_id": 1004000434,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "선바위": {
+        "station_id": 1004000435,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "경마공원": {
+        "station_id": 1004000436,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "대공원": {
+        "station_id": 1004000437,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "과천": {
+        "station_id": 1004000438,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "정부과천청사": {
+        "station_id": 1004000439,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "인덕원": {
+        "station_id": 1004000440,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "평촌": {
+        "station_id": 1004000441,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "범계": {
+        "station_id": 1004000442,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "산본": {
+        "station_id": 1004000444,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "수리산": {
+        "station_id": 1004000445,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "대야미": {
+        "station_id": 1004000446,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "반월": {
+        "station_id": 1004000447,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "상록수": {
+        "station_id": 1004000448,
+        "line_name": "4호선",
+        "subway_id": 1004
+    },
+    "한대앞": {
+        "station_id": 1075075251,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "중앙": {
+        "station_id": 1075075252,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "고잔": {
+        "station_id": 1075075253,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "초지": {
+        "station_id": 1093004020,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "안산": {
+        "station_id": 1075075255,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "신길온천": {
+        "station_id": 1075075256,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "정왕": {
+        "station_id": 1075075257,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "오이도": {
+        "station_id": 1075075258,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "방화": {
+        "station_id": 1005000510,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "개화산": {
+        "station_id": 1005000511,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "김포공항": {
+        "station_id": 1093004007,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "송정": {
+        "station_id": 1005000513,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "마곡": {
+        "station_id": 1005000514,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "발산": {
+        "station_id": 1005000515,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "우장산": {
+        "station_id": 1005000516,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "화곡": {
+        "station_id": 1005000517,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "신정(은행정)": {
+        "station_id": 1005000519,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "목동": {
+        "station_id": 1005000520,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "오목교(목동운동장앞)": {
+        "station_id": 1005000521,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "양평": {
+        "station_id": 1063075135,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "영등포시장": {
+        "station_id": 1005000524,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "여의도": {
+        "station_id": 1009000915,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "여의나루": {
+        "station_id": 1005000527,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "마포": {
+        "station_id": 1005000528,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "공덕": {
+        "station_id": 1065006502,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "애오개": {
+        "station_id": 1005000530,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "서대문": {
+        "station_id": 1005000532,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "광화문": {
+        "station_id": 1005000533,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "청구": {
+        "station_id": 1006000634,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "신금호": {
+        "station_id": 1005000538,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "행당": {
+        "station_id": 1005000539,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "마장": {
+        "station_id": 1005000541,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "답십리": {
+        "station_id": 1005000542,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "장한평": {
+        "station_id": 1005000543,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "군자(능동)": {
+        "station_id": 1007000725,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "아차산(어린이대공원후문)": {
+        "station_id": 1005000545,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "광나루(장신대)": {
+        "station_id": 1005000546,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "천호(풍납토성)": {
+        "station_id": 1008000811,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "강동": {
+        "station_id": 1005000548,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "길동": {
+        "station_id": 1005000549,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "굽은다리(강동구민회관앞)": {
+        "station_id": 1005000550,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "명일": {
+        "station_id": 1005000551,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "고덕": {
+        "station_id": 1005000552,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "상일동": {
+        "station_id": 1005000553,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "강일": {
+        "station_id": 1005000554,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "미사": {
+        "station_id": 1005000555,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "하남풍산": {
+        "station_id": 1005000556,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "하남시청": {
+        "station_id": 1005000557,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "하남검단산": {
+        "station_id": 1005000558,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "둔촌동": {
+        "station_id": 1005080549,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "올림픽공원(한국체대)": {
+        "station_id": 1005080550,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "방이": {
+        "station_id": 1005080551,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "개롱": {
+        "station_id": 1005080553,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "거여": {
+        "station_id": 1005080554,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "마천": {
+        "station_id": 1005080555,
+        "line_name": "5호선",
+        "subway_id": 1005
+    },
+    "응암순환(상선)": {
+        "station_id": 1006000610,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "역촌": {
+        "station_id": 1006000611,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "독바위": {
+        "station_id": 1006000613,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "구산": {
+        "station_id": 1006000615,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "새절(신사)": {
+        "station_id": 1006000616,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "증산(명지대앞)": {
+        "station_id": 1006000617,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "디지털미디어시티": {
+        "station_id": 1065006504,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "월드컵경기장(성산)": {
+        "station_id": 1006000619,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "마포구청": {
+        "station_id": 1006000620,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "망원": {
+        "station_id": 1006000621,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "상수": {
+        "station_id": 1006000623,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "광흥창": {
+        "station_id": 1006000624,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "대흥(서강대앞)": {
+        "station_id": 1006000625,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "효창공원앞": {
+        "station_id": 1063075826,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "녹사평": {
+        "station_id": 1006000629,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "이태원": {
+        "station_id": 1006000630,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "한강진": {
+        "station_id": 1006000631,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "버티고개": {
+        "station_id": 1006000632,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "창신": {
+        "station_id": 1006000637,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "보문": {
+        "station_id": 1092004712,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "안암(고대병원앞)": {
+        "station_id": 1006000639,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "고려대": {
+        "station_id": 1006000640,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "월곡(동덕여대)": {
+        "station_id": 1006000641,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "상월곡(한국과학기술연구원)": {
+        "station_id": 1006000642,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "돌곶이": {
+        "station_id": 1006000643,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "태릉입구": {
+        "station_id": 1007000717,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "화랑대(서울여대입구)": {
+        "station_id": 1006000646,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "봉화산": {
+        "station_id": 1006000647,
+        "line_name": "6호선",
+        "subway_id": 1006
+    },
+    "신내": {
+        "station_id": 1067080122,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "장암": {
+        "station_id": 1007000709,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "수락산": {
+        "station_id": 1007000711,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "마들": {
+        "station_id": 1007000712,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "중계": {
+        "station_id": 1007000714,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "하계": {
+        "station_id": 1007000715,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "공릉(서울산업대입구)": {
+        "station_id": 1007000716,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "먹골": {
+        "station_id": 1007000718,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "중화": {
+        "station_id": 1007000719,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "상봉": {
+        "station_id": 1067080120,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "면목": {
+        "station_id": 1007000721,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "사가정": {
+        "station_id": 1007000722,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "용마산": {
+        "station_id": 1007000723,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "중곡": {
+        "station_id": 1007000724,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "어린이대공원(세종대)": {
+        "station_id": 1007000726,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "뚝섬유원지": {
+        "station_id": 1007000728,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "청담": {
+        "station_id": 1007000729,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "강남구청": {
+        "station_id": 1075075213,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "학동": {
+        "station_id": 1007000731,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "논현": {
+        "station_id": 1077000685,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "반포": {
+        "station_id": 1007000733,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "내방": {
+        "station_id": 1007000735,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "남성": {
+        "station_id": 1007000737,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "숭실대입구(살피재)": {
+        "station_id": 1007000738,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "상도(중앙대앞)": {
+        "station_id": 1007000739,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "장승배기": {
+        "station_id": 1007000740,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "신대방삼거리": {
+        "station_id": 1007000741,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "보라매": {
+        "station_id": 1094000404,
+        "line_name": "신림선",
+        "subway_id": 1094
+    },
+    "신풍": {
+        "station_id": 1007000743,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "남구로": {
+        "station_id": 1007000745,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "철산": {
+        "station_id": 1007000747,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "광명사거리": {
+        "station_id": 1007000748,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "천왕": {
+        "station_id": 1007000749,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "까치울": {
+        "station_id": 1007000751,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "부천종합운동장": {
+        "station_id": 1093004009,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "춘의": {
+        "station_id": 1007000753,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "신중동": {
+        "station_id": 1007000754,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "부천시청": {
+        "station_id": 1007000755,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "상동": {
+        "station_id": 1007000756,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "삼산체육관": {
+        "station_id": 1007000757,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "굴포천": {
+        "station_id": 1007000758,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "부평구청": {
+        "station_id": 1007000759,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "산곡": {
+        "station_id": 1007000760,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "석남": {
+        "station_id": 1007000761,
+        "line_name": "7호선",
+        "subway_id": 1007
+    },
+    "별내": {
+        "station_id": 1067080124,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "다산": {
+        "station_id": 1008000805,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "동구릉": {
+        "station_id": 1008000806,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "구리": {
+        "station_id": 1063075123,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "장자호수공원": {
+        "station_id": 1008000808,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "암사역사공원": {
+        "station_id": 1008000809,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "암사": {
+        "station_id": 1008000810,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "강동구청": {
+        "station_id": 1008000812,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "몽촌토성(평화의문)": {
+        "station_id": 1008000813,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "석촌": {
+        "station_id": 1009000933,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "송파": {
+        "station_id": 1008000816,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "문정": {
+        "station_id": 1008000818,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "장지": {
+        "station_id": 1008000819,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "복정": {
+        "station_id": 1075075222,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "남위례": {
+        "station_id": 1008000821,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "산성": {
+        "station_id": 1008000822,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "남한산성입구(성남법원,검찰청)": {
+        "station_id": 1008000823,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "단대오거리": {
+        "station_id": 1008000824,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "신흥": {
+        "station_id": 1008000825,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "수진": {
+        "station_id": 1008000826,
+        "line_name": "8호선",
+        "subway_id": 1008
+    },
+    "모란": {
+        "station_id": 1075075225,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "개화": {
+        "station_id": 1009000901,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "공항시장": {
+        "station_id": 1009000903,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "신방화": {
+        "station_id": 1009000904,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "마곡나루": {
+        "station_id": 1065065042,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "양천향교": {
+        "station_id": 1009000906,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "가양": {
+        "station_id": 1009000907,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "증미": {
+        "station_id": 1009000908,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "등촌": {
+        "station_id": 1009000909,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "염창": {
+        "station_id": 1009000910,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "신목동": {
+        "station_id": 1009000911,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "선유도": {
+        "station_id": 1009000912,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "국회의사당": {
+        "station_id": 1009000914,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "샛강": {
+        "station_id": 1094000401,
+        "line_name": "신림선",
+        "subway_id": 1094
+    },
+    "노들": {
+        "station_id": 1009000918,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "흑석": {
+        "station_id": 1009000919,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "구반포": {
+        "station_id": 1009000921,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "신반포": {
+        "station_id": 1009000922,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "사평": {
+        "station_id": 1009000924,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "신논현": {
+        "station_id": 1077000686,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "언주": {
+        "station_id": 1009000926,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "선정릉": {
+        "station_id": 1075075214,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "삼성중앙": {
+        "station_id": 1009000928,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "봉은사": {
+        "station_id": 1009000929,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "삼전": {
+        "station_id": 1009000931,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "석촌고분": {
+        "station_id": 1009000932,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "송파나루": {
+        "station_id": 1009000934,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "한성백제": {
+        "station_id": 1009000935,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "올림픽공원": {
+        "station_id": 1009000936,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "둔촌오륜": {
+        "station_id": 1009000937,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "중앙보훈병원": {
+        "station_id": 1009000938,
+        "line_name": "9호선",
+        "subway_id": 1009
+    },
+    "성남": {
+        "station_id": 1081037410,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "구성": {
+        "station_id": 1075075235,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "동탄": {
+        "station_id": 1032000356,
+        "line_name": "GTX-A",
+        "subway_id": 1032
+    },
+    "서빙고": {
+        "station_id": 1063075112,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "한남": {
+        "station_id": 1063075113,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "응봉": {
+        "station_id": 1063075115,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "중랑": {
+        "station_id": 1067080118,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "망우": {
+        "station_id": 1067080121,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "양원": {
+        "station_id": 1063075122,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "도농": {
+        "station_id": 1063075124,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "양정": {
+        "station_id": 1063075125,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "덕소": {
+        "station_id": 1063075126,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "도심": {
+        "station_id": 1063075127,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "팔당": {
+        "station_id": 1063075128,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "운길산": {
+        "station_id": 1063075129,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "양수": {
+        "station_id": 1063075130,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "신원": {
+        "station_id": 1063075131,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "국수": {
+        "station_id": 1063075132,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "아신": {
+        "station_id": 1063075133,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "오빈": {
+        "station_id": 1063075134,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "원덕": {
+        "station_id": 1063075136,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "용문": {
+        "station_id": 1063075137,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "지평": {
+        "station_id": 1063075138,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "서강대": {
+        "station_id": 1063075313,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "가좌": {
+        "station_id": 1063075315,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "수색": {
+        "station_id": 1063075317,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "한국항공대": {
+        "station_id": 1063075318,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "강매": {
+        "station_id": 1063075319,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "행신": {
+        "station_id": 1063075320,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "능곡": {
+        "station_id": 1093004006,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "곡산": {
+        "station_id": 1093004004,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "백마": {
+        "station_id": 1093004003,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "풍산": {
+        "station_id": 1093004002,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "일산": {
+        "station_id": 1093004001,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "탄현": {
+        "station_id": 1063075327,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "야당": {
+        "station_id": 1063075328,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "운정": {
+        "station_id": 1063075329,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "금릉": {
+        "station_id": 1063075330,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "금촌": {
+        "station_id": 1063075331,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "월롱": {
+        "station_id": 1063075333,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "파주": {
+        "station_id": 1063075334,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "문산": {
+        "station_id": 1063075335,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "운천": {
+        "station_id": 1063075336,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "임진강": {
+        "station_id": 1063075337,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "신촌(경의중앙선)": {
+        "station_id": 1063080312,
+        "line_name": "경의중앙선",
+        "subway_id": 1063
+    },
+    "계양": {
+        "station_id": 1065006506,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "검암": {
+        "station_id": 1065006507,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "운서": {
+        "station_id": 1065006508,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "공항화물청사": {
+        "station_id": 1065006509,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "인천공항1터미널": {
+        "station_id": 1065006510,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "인천공항2터미널": {
+        "station_id": 1065006511,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "청라국제도시": {
+        "station_id": 1065065071,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "영종": {
+        "station_id": 1065065072,
+        "line_name": "공항철도",
+        "subway_id": 1065
+    },
+    "갈매": {
+        "station_id": 1067080123,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "퇴계원": {
+        "station_id": 1067080125,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "사릉": {
+        "station_id": 1067080126,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "금곡": {
+        "station_id": 1067080127,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "평내호평": {
+        "station_id": 1067080128,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "천마산": {
+        "station_id": 1067080129,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "마석": {
+        "station_id": 1067080130,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "대성리": {
+        "station_id": 1067080131,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "청평": {
+        "station_id": 1067080132,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "상천": {
+        "station_id": 1067080133,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "가평": {
+        "station_id": 1067080134,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "굴봉산": {
+        "station_id": 1067080135,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "백양리": {
+        "station_id": 1067080136,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "강촌": {
+        "station_id": 1067080137,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "김유정": {
+        "station_id": 1067080138,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "남춘천": {
+        "station_id": 1067080139,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "춘천": {
+        "station_id": 1067080140,
+        "line_name": "경춘선",
+        "subway_id": 1067
+    },
+    "서울숲": {
+        "station_id": 1075075211,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "압구정로데오": {
+        "station_id": 1075075212,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "한티": {
+        "station_id": 1075075216,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "구룡": {
+        "station_id": 1075075218,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "개포동": {
+        "station_id": 1075075219,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "대모산입구": {
+        "station_id": 1075075220,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "가천대": {
+        "station_id": 1075075223,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "태평": {
+        "station_id": 1075075224,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "야탑": {
+        "station_id": 1075075226,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "이매": {
+        "station_id": 1081037411,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "서현": {
+        "station_id": 1075075228,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "수내": {
+        "station_id": 1075075229,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "정자": {
+        "station_id": 1077006812,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "미금": {
+        "station_id": 1077006813,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "오리": {
+        "station_id": 1075075232,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "죽전": {
+        "station_id": 1075075233,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "보정": {
+        "station_id": 1075075234,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "신갈": {
+        "station_id": 1075075236,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "기흥": {
+        "station_id": 1075075237,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "상갈": {
+        "station_id": 1075075238,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "청명": {
+        "station_id": 1075075239,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "영통": {
+        "station_id": 1075075240,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "망포": {
+        "station_id": 1075075241,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "매탄권선": {
+        "station_id": 1075075242,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "수원시청": {
+        "station_id": 1075075243,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "매교": {
+        "station_id": 1075075244,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "고색": {
+        "station_id": 1075075246,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "오목천": {
+        "station_id": 1075075247,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "어천": {
+        "station_id": 1075075248,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "야목": {
+        "station_id": 1075075249,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "사리": {
+        "station_id": 1075075250,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "달월": {
+        "station_id": 1075075259,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "월곶": {
+        "station_id": 1075075260,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "소래포구": {
+        "station_id": 1075075261,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "인천논현": {
+        "station_id": 1075075262,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "호구포": {
+        "station_id": 1075075263,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "남동인더스파크": {
+        "station_id": 1075075264,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "원인재": {
+        "station_id": 1075075265,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "연수": {
+        "station_id": 1075075266,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "송도": {
+        "station_id": 1075075267,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "인하대": {
+        "station_id": 1075075268,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "숭의": {
+        "station_id": 1075075269,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "신포": {
+        "station_id": 1075075270,
+        "line_name": "수인분당선",
+        "subway_id": 1075
+    },
+    "양재시민의숲": {
+        "station_id": 1077000689,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "청계산입구": {
+        "station_id": 1077006810,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "판교": {
+        "station_id": 1081037409,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "동천": {
+        "station_id": 1077006814,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "수지구청": {
+        "station_id": 1077006815,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "성복": {
+        "station_id": 1077006816,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "상현": {
+        "station_id": 1077006817,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "광교중앙": {
+        "station_id": 1077006818,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "광교": {
+        "station_id": 1077006819,
+        "line_name": "신분당선",
+        "subway_id": 1077
+    },
+    "삼동": {
+        "station_id": 1081037412,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "경기광주": {
+        "station_id": 1081037413,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "초월": {
+        "station_id": 1081037414,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "곤지암": {
+        "station_id": 1081037415,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "신둔도예촌": {
+        "station_id": 1081037416,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "이천": {
+        "station_id": 1081037417,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "부발": {
+        "station_id": 1081037418,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "세종왕릉": {
+        "station_id": 1081037419,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "여주": {
+        "station_id": 1081037420,
+        "line_name": "경강선",
+        "subway_id": 1081
+    },
+    "북한산우이": {
+        "station_id": 1092004701,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "솔밭공원": {
+        "station_id": 1092004702,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "4.19 민주묘지": {
+        "station_id": 1092004703,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "가오리": {
+        "station_id": 1092004704,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "화계": {
+        "station_id": 1092004705,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "삼양": {
+        "station_id": 1092004706,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "삼양사거리": {
+        "station_id": 1092004707,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "솔샘": {
+        "station_id": 1092004708,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "북한산보국문": {
+        "station_id": 1092004709,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "정릉": {
+        "station_id": 1092004710,
+        "line_name": "우이신설선",
+        "subway_id": 1092
+    },
+    "원종": {
+        "station_id": 1093004008,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "소새울": {
+        "station_id": 1093004011,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "시흥대야": {
+        "station_id": 1093004012,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "신천": {
+        "station_id": 1093004013,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "신현": {
+        "station_id": 1093004014,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "시흥시청": {
+        "station_id": 1093004016,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "시흥능곡": {
+        "station_id": 1093004017,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "달미": {
+        "station_id": 1093004018,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "선부": {
+        "station_id": 1093004019,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "시우": {
+        "station_id": 1093004021,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "원시": {
+        "station_id": 1093004022,
+        "line_name": "서해선",
+        "subway_id": 1093
+    },
+    "서울지방병무청": {
+        "station_id": 1094000403,
+        "line_name": "신림선",
+        "subway_id": 1094
+    },
+    "보라매공원": {
+        "station_id": 1094000405,
+        "line_name": "신림선",
+        "subway_id": 1094
+    },
+    "보라매병원": {
+        "station_id": 1094000406,
+        "line_name": "신림선",
+        "subway_id": 1094
+    },
+    "당곡": {
+        "station_id": 1094000407,
+        "line_name": "신림선",
+        "subway_id": 1094
+    },
+    "서원": {
+        "station_id": 1094000409,
+        "line_name": "신림선",
+        "subway_id": 1094
+    },
+    "서울대벤처타운": {
+        "station_id": 1094000410,
+        "line_name": "신림선",
+        "subway_id": 1094
+    },
+    "관악산": {
+        "station_id": 1094000411,
+        "line_name": "신림선",
+        "subway_id": 1094
+    }
+}
