@@ -46,7 +46,7 @@ class ScheduleJob(SQLModel, table=True):
     day_of_week: str = Field(description="요일 (예: mon, tue, wed, thu, fri, sat, sun, mon-fri, sat,sun)")
     time_hour: int = Field(description="시간 (예: 09)")
     time_minute: int = Field(description="분 (예: 00)")
-    agent_name: str = Field(description="작업 유형 (예: news, subway, weather, web_search)")
+    agent_list: list[str] = Field(default_factory=list, sa_type=JSON, description="작업 유형 리스트 (예: [news, subway, weather, web_search])")    
     query: str = Field(description="작업 쿼리")    
     created: Optional[datetime] = Field(default=None, description="생성 시각")
     updated: Optional[datetime] = Field(default=None, description="업데이트 시각")

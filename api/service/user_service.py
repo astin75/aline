@@ -37,3 +37,4 @@ async def get_user_by_platform_id(session: Session, platform_id: str) -> User | 
         logger.error(f"사용자가 존재하지 않습니다: {platform_id}")
         return None
     return user[0] if user else None
+

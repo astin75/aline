@@ -25,3 +25,7 @@ class UserAgentSetConfigList(BaseModel):
 class UserAgentFinalOutput(BaseModel):
     answer: str = Field(description="답변")
     status: AgentCommonStatus = Field(description="상태")
+
+class UserContextInfo(BaseModel):
+    user_id: int = Field(description="사용자 ID")
+    user_extra_info: dict = Field(description="사용자 추가 정보")

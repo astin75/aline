@@ -1,19 +1,31 @@
 import uvicorn
-
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from configs import settings
+from schedule_service.service import scheduler, job_runner
 from custom_logger import get_logger
 
 logger = get_logger(__name__)
 
-
-def create_app(env: str = "dev"):
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # start up contexts
+    scheduler.add_job(job_runner, "interval", seconds=25)
+    scheduler.start()
+    logger.info("Scheduler started")
+    yield
+    # Clean up contexts
+    scheduler.shutdown()
+    logger.info("Scheduler shutdown")
+    
+def create_app(env: str = "dev", lifespan: asynccontextmanager = None):
     app = FastAPI(
         title=f"aline-bot-api-{env}",
         description="aline-bot-api",
         version="0.1.0",
         root_path=f"/api",
+        lifespan=lifespan,
     )
 
     app.add_middleware(
@@ -35,8 +47,11 @@ def add_routes(app: FastAPI):
     app.include_router(conversation_router)
     app.include_router(chat_router)
 
-app = create_app(settings.env)
+
+
+app = create_app(settings.env, lifespan=lifespan)
 add_routes(app)
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

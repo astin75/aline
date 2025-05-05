@@ -5,8 +5,7 @@ from sqlmodel import select
 
 from database.db import get_session
 from database.db_models import Conversation, Message
-from database.crud import get_conversation_messages, delete_conversation
-
+from api.service.conversation_service import get_conversation_messages
 conversation_router = APIRouter(prefix="/conversation", tags=["conversation"])
 
 
@@ -46,7 +45,6 @@ async def remove_conversation(
     if not conversation:
         raise HTTPException(status_code=404, detail="대화를 찾을 수 없습니다")
 
-    if await delete_conversation(conversation_id):
-        return {"message": "대화가 성공적으로 삭제되었습니다"}
-    else:
-        raise HTTPException(status_code=500, detail="대화 삭제 중 오류가 발생했습니다")
+    await session.delete(conversation)
+    await session.commit()
+    return {"message": "대화가 성공적으로 삭제되었습니다"}

@@ -7,6 +7,14 @@ def get_user_agent_prompt():
     ## 작업 순서 
     - 사용자질문을 이해하고, set_agent_config 함수를 호출하여 설정 정보를 생성합니다.
     - 설정 정보를 사용자에게 알려 줍니다.
+    - 스케줄이 이미 1개 이상이라면 에이전트를 종료하고 사용자에게 스케줄 삭제 요청을 해주세요.
+
+
+    ## 추가 tools
+    - get_user_schedule_list : 사용자의 스케줄 목록을 조회합니다.
+    - delete_user_schedule : 사용자의 스케줄을 삭제합니다. *중요* 유저의 별도 요청이 있을때만 삭제해주세요.)
+    - (get_user_schedule_list 함수를 호출하여 스케줄 목록을 조회한 후, delete_user_schedule 함수를 호출하여 삭제합니다.)
+    
     
     ## *중요*  출력 format을 꼭 지켜주세요.
     - 설정 정보를 사용자에게 알려 줍니다.

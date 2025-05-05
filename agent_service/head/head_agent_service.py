@@ -1,10 +1,10 @@
 from api.service.conversation_service import create_or_get_conversation, create_message, get_conversation_messages
 from agent_service.head.head_agent import head_agent_runner
-from database.db import get_session
+from database.db import get_session_with
 from database.db_models import User, Conversation
 
 async def chat_with_head_agent(user: User, message: str) -> str:
-    async for session in get_session():
+    async with get_session_with() as session:
         conversation = await create_or_get_conversation(session, user.id)
         messages = await get_conversation_messages(session, conversation.id)
         message_history = convert_message_history(messages)
@@ -23,8 +23,6 @@ def get_message_queue(
     limit_size = int(memory_size *2)
     if len(message_history) >= limit_size:
         message_history = message_history[-limit_size:]
-    for data in message_history:
-        print(data, "@@@@@@@@@@@@@@@@@@")
     return message_history
 
 def convert_message_history(conversation: Conversation) -> list[dict]:
