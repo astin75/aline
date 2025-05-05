@@ -12,3 +12,10 @@ COPY default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]
+
+# docker build -t nginx-image .
+# docker run -d -p 80:80 -p 443:443 nginx-image
+# docker run --rm -it -p 80:80 -p 443:443 \
+#   -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf \
+#   -v $(pwd)/default.conf:/etc/nginx/conf.d/default.conf \
+#   nginx-image
