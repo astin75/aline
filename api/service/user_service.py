@@ -38,3 +38,20 @@ async def get_user_by_platform_id(session: Session, platform_id: str) -> User | 
         return None
     return user[0] if user else None
 
+async def update_user_extra_info(session: Session, user_id: int, user_extra_info: dict) -> bool:
+    user = await session.get(User, user_id)
+    if not user:
+        logger.error(f"사용자가 존재하지 않습니다: {user_id}")
+        return False
+    user.user_memory = user_extra_info
+    await session.commit()
+    await session.refresh(user)
+    return True
+
+async def get_user_extra_info(session: Session, user_id: int) -> str:
+    user = await session.get(User, user_id)
+    if not user:
+        logger.error(f"사용자가 존재하지 않습니다: {user_id}")
+        return None
+    return user.user_memory
+

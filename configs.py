@@ -31,12 +31,14 @@ class Settings(BaseSettings):
 
 class DevSettings(Settings):
     env: str = "dev"
+    db_host: str = "localhost"
     project_name: str = f"aline-{env}"
     pass
 
 
 class ProdSettings(Settings):
     env: str = "prod"
+    db_host: str = "db"
     project_name: str = f"aline-{env}"
     pass
 

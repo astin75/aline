@@ -9,9 +9,7 @@ class User(SQLModel, table=True):
     unique_id: str = Field(unique=True, description="내부적으로 사용하는 고유 식별자")
     platform_type: str = Field(description="플랫폼 종류 (예: kakao, slack 등)")
     email: Optional[str] = Field(default=None, description="이메일 주소")
-    user_memory: Optional[dict] = Field(
-        default_factory=dict, sa_type=JSON, description="유저의 추가 정보(JSON 형식)"
-    )
+    user_memory: Optional[str] = Field(default=None, description="유저의 추가 정보")
     created: Optional[datetime] = Field(default=None, description="생성 시각")
     updated: Optional[datetime] = Field(default=None, description="업데이트 시각")
 

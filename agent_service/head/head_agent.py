@@ -1,14 +1,12 @@
 import asyncio
 from typing import List
-from datetime import datetime
-from agents import Agent, Runner, WebSearchTool, set_trace_processors, function_tool
+from agents import Agent, Runner, set_trace_processors, function_tool
 from litellm import acompletion
 import weave
 from weave.integrations.openai_agents.openai_agents import WeaveTracingProcessor
 
 from configs import settings
 from custom_logger import get_logger
-from common.schemas import AgentCommonStatus
 from common.utils import (
     create_or_update_prompt,
     get_litellm_model,
@@ -18,7 +16,9 @@ from agent_service.head.prompts import get_head_agent_prompt, get_bot_guide
 from agent_service.weather.weather_agent import get_weater_agent
 from agent_service.news.news_agent import get_news_agent
 from agent_service.subway.subway_agent import get_subway_agent
-from agent_service.head.schemas import GlobalContext, Message
+from agent_service.user.user_agent import get_user_agent
+
+from agent_service.user.schemas import UserContextInfo
 
 weave.init(project_name="head_agent")
 set_trace_processors([WeaveTracingProcessor()])
@@ -55,11 +55,12 @@ async def get_aline_bot_guide(query: str) -> str:
 
 @weave.op()
 async def head_agent_runner(
-    input: List[dict], model: str = "openai/gpt-4.1-nano"
+    input: List[dict], user_info: UserContextInfo, model: str = "openai/gpt-4.1-nano"
 ) -> str:
     weather_agent = get_weater_agent(model)
     news_agent = get_news_agent(model)
     subway_agent = get_subway_agent(model)
+    user_agent = get_user_agent(model)
     head_agent = Agent(
         name="head_agent",
         instructions=instructions,
@@ -76,12 +77,20 @@ async def head_agent_runner(
                 tool_name=subway_agent.name,
                 tool_description=subway_agent.handoff_description,
             ),
+            user_agent.as_tool(
+                tool_name=user_agent.name,
+                tool_description="""
+                1. 사용자의 정보를 조회하고 기억 혹은 업데이트하는 도구
+                2. 스케줄기능: 여러에이전트 조합 + 시간 기반으로 Push 알림 기능을 만들 거나 조회 할 수 있습니다.
+                3. 사용자가 본인의 정보를 조회하고 싶을때 사용합니다.
+                """,
+            ),
             google_web_search,
             get_aline_bot_guide,
         ],
-        model=get_litellm_model(model),
+        model=get_litellm_model("openai/gpt-4o-mini"),
     )
-    result = await Runner.run(head_agent, input, max_turns=10)
+    result = await Runner.run(head_agent, input, context=user_info, max_turns=10)
 
     if result.last_agent.name == "get_aline_bot_guide":
         return result.final_output.guide
@@ -89,45 +98,27 @@ async def head_agent_runner(
         return result.final_output
 
 
-
 @weave.op()
 async def main():
-    user_id = "d07a9e1e-988e-41ae-9faa-5ac0c0d8d80f"  # str(uuid.uuid4())
     create_or_update_prompt(
         weave, "head_agent_prompt", instructions, "head_agent_prompt"
     )
     message_history = []
     input_items = []
-    # global_context = GlobalContext(
-    #    user_info={'user_name': '홍길동', 'age': 20, 'gender': 'male'},
-    #    message_history=[],
-    # )
-    from dataclasses import dataclass
-
-    @dataclass
-    class GlobalContext:
-        user_info: dict
-        message_history: list
-
-    # global_context = GlobalContext(
-    #     user_info={'user_name': '홍길동', 'age': 20, 'gender': 'male'},
-    #     message_history=[],
-    # )
-    # with weave.attributes({"session_id": user_id}):
-    for i in range(7):
+    user_info = UserContextInfo(
+        user_id=1,
+        user_extra_info={},
+    )
+    for i in range(3):
         input_items = []
 
         for message in message_history:
             input_items.append({"role": message["role"], "content": message["content"]})
 
         user_input = input("Enter your question: ")
-        # input_items.append({"role":"user", "content": f"{global_context.user_info}"})
         input_items.append({"role": "user", "content": user_input})
-        context = GlobalContext(
-            user_info={"user_name": "홍길동", "age": 20, "gender": "male"},
-            message_history=[],
-        )
-        result = await head_agent_runner(input_items, context)
+
+        result = await head_agent_runner(input_items, user_info)
         message_history = handle_message_queue(message_history, user_input, result)
         print(result)
 

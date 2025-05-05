@@ -24,7 +24,7 @@ async def create_conversation(session: Session, user_id: int) -> Conversation:
     return conversation
 
 async def get_conversation_by_user_id(session: Session, user_id: int) -> Conversation:
-    """특정 대화를 조회합니다."""
+    """유저 아이디로 활성 대화를 조회합니다."""
     query = select(Conversation).where(Conversation.user_id == user_id)
     result = await session.execute(query)
     return result.scalar_one_or_none()
@@ -65,10 +65,47 @@ async def create_message(
     await session.refresh(message)
     return message
 
+async def get_conversation_by_id(session: Session, conversation_id: int) -> Conversation:
+    """특정 대화를 조회합니다."""
+    query = select(Conversation).where(Conversation.id == conversation_id)
+    result = await session.execute(query)
+    return result.scalar_one_or_none()
 
 async def create_or_get_conversation(session: Session, user_id: int) -> Conversation:
-    """사용자의 활성 대화를 조회하거나 없으면 새로 생성합니다."""
+    """사용자의 활성 대화를 조회하거나 없으면 새로 생성합니다.
+    - 10분 이상 대화가 없으면 새로 생성합니다.
+    """
+    now = datetime.now()
+    minutes = 10
     conversation = await get_conversation_by_user_id(session, user_id)
     if not conversation:
         conversation = await create_conversation(session, user_id)
+    else:
+        time_diff = now - conversation.updated
+        if time_diff.total_seconds() > minutes * 60:
+            await delete_conversation(session, conversation.id)
+            conversation = await create_conversation(session, user_id)
     return conversation
+
+async def init_conversation(session: Session, user_id: int) -> Conversation:
+    """대화를 초기화합니다."""
+    conversation = await get_conversation_by_user_id(session, user_id)
+    if conversation:
+        await delete_conversation(session, conversation.id)
+    conversation = await create_conversation(session, user_id)
+    return conversation
+
+async def update_conversation_time(session: Session, conversation_id: int) -> bool:
+    """대화 시간을 업데이트합니다."""
+    conversation = await get_conversation_by_id(session, conversation_id)
+    conversation.updated = datetime.now()
+    await session.commit()
+    await session.refresh(conversation)
+    return True
+
+async def delete_conversation(session: Session, conversation_id: int) -> bool:
+    """대화를 삭제합니다."""
+    conversation = await get_conversation_by_id(session, conversation_id)
+    await session.delete(conversation)
+    await session.commit()
+    return True

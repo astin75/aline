@@ -1,4 +1,5 @@
 from typing import Literal
+from dataclasses import dataclass 
 from pydantic import BaseModel, Field
 from common.schemas import AgentCommonStatus
 
@@ -26,6 +27,7 @@ class UserAgentFinalOutput(BaseModel):
     answer: str = Field(description="답변")
     status: AgentCommonStatus = Field(description="상태")
 
-class UserContextInfo(BaseModel):
-    user_id: int = Field(description="사용자 ID")
-    user_extra_info: dict = Field(description="사용자 추가 정보")
+@dataclass
+class UserContextInfo:
+    user_id: int # 사용자 ID
+    user_extra_info: dict # 사용자 추가 정보

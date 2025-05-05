@@ -14,6 +14,8 @@ def get_user_agent_prompt():
     - get_user_schedule_list : 사용자의 스케줄 목록을 조회합니다.
     - delete_user_schedule : 사용자의 스케줄을 삭제합니다. *중요* 유저의 별도 요청이 있을때만 삭제해주세요.)
     - (get_user_schedule_list 함수를 호출하여 스케줄 목록을 조회한 후, delete_user_schedule 함수를 호출하여 삭제합니다.)
+    - get_user_memory_info : 사용자의 정보를 조회합니다.
+    - memory_user_extra_info : 사용자의 정보를 업데이트합니다.
     
     
     ## *중요*  출력 format을 꼭 지켜주세요.
@@ -42,4 +44,9 @@ def get_user_agent_config_prompt():
     - 평일 `mon-fri`, 주말`sat,sun`, 매일 `mon-sun` 특정 요일이면 그대로 반영하세요.
     - 매일은 주말 포함 모든 요일을 의미합니다.
     - `job_type`은 요일에 따라 `"weekly"`, `"weekday"`, `"weekend"` 중 하나로 자동 지정합니다.    
+    """
+    
+def get_user_agent_memory_prompt():
+    return f"""
+    기존 유저 정보와 새로운 유저 정보를 기반으로 최대한 깔끔하게 bullet point 형태로 정리해주세요.
     """

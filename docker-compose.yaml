@@ -26,7 +26,7 @@ services:
       - .:/app
     environment:
       - TZ=Asia/Seoul
-    command: sh -c "uv run main.py"
+    command: sh -c "ENV=prod uv run main.py"
     depends_on:
       - db
     restart: unless-stopped
