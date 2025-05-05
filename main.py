@@ -55,6 +55,9 @@ def add_routes(app: FastAPI):
 app = create_app(settings.env, lifespan=lifespan)
 add_routes(app)
 
+@app.get("/health-check")
+async def health_check():
+    return {"status": "ok"}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
