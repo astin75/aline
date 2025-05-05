@@ -71,7 +71,9 @@ async def get_subway_station_info(station_name: str) -> StationSearchResult:
     return match_info
 
 
-@function_tool
+@function_tool(
+    description_override="""get_subway_station_info 함수를 통해 조회한'station_name'을 사용해주세요.""",
+)
 @weave.op()
 async def get_subway_arrival_info(station_name: str) -> list[SubwayArrivalInfo]:
     """지하철 도착 정보를 조회하는 함수"""
@@ -122,7 +124,7 @@ async def subway_agent_output_guardrail(
         name="subway_agent_output_guardrail",
         instructions=output_guardrail_prompt,
         output_type=SubwayAgentOutputGuardrail,
-        model="gpt-4.1-nano",
+        model="gpt-4o-mini",
     )
     result = await Runner.run(guardrail_agent, output, context=ctx.context)
     return GuardrailFunctionOutput(

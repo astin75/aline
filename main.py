@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from configs import settings
 from schedule_service.service import scheduler, job_runner
+from database.db import create_db_and_tables
 from custom_logger import get_logger
 
 logger = get_logger(__name__)
@@ -14,6 +15,9 @@ async def lifespan(app: FastAPI):
     scheduler.add_job(job_runner, "interval", seconds=25)
     scheduler.start()
     logger.info("Scheduler started")
+    
+    await create_db_and_tables()
+    logger.info("Database tables created")
     yield
     # Clean up contexts
     scheduler.shutdown()
@@ -24,7 +28,6 @@ def create_app(env: str = "dev", lifespan: asynccontextmanager = None):
         title=f"aline-bot-api-{env}",
         description="aline-bot-api",
         version="0.1.0",
-        root_path=f"/api",
         lifespan=lifespan,
     )
 

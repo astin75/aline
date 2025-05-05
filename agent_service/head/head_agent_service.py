@@ -18,7 +18,7 @@ async def chat_with_head_agent(user: User, message: str) -> str:
 
 def get_message_queue(
     message_history: list[dict],
-    memory_size: int = 5,
+    memory_size: int = 10,
 ) -> list[dict]:
     limit_size = int(memory_size *2)
     if len(message_history) >= limit_size:

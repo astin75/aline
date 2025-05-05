@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     db_port: int = dot_env["DB_PORT"]
     db_user: str = dot_env["DB_USER"]
     db_password: str = dot_env["DB_PASSWORD"]
-    db_host: str = "localhost"
+    db_host: str = "db"
     db_name: str = dot_env["DB_NAME"]
     seoul_openapi_key: str = dot_env["SEOUL_OPENAPI_KEY"]
 
