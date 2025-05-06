@@ -6,6 +6,7 @@ from api.service.conversation_service import (
     init_conversation,
 )
 from agent_service.head.head_agent import head_agent_runner
+from agent_service.user.schemas import UserContextInfo
 from database.db import get_session_with
 from database.db_models import User, Conversation
 
@@ -19,7 +20,7 @@ async def chat_with_head_agent(user: User, message: str) -> str:
         message_history = convert_message_history(messages)
         message_history.append({"role": "user", "content": message})
         message_history = get_message_queue(message_history)
-        result = await head_agent_runner(message_history)
+        result = await head_agent_runner(message_history, UserContextInfo(user_id=user.id, user_extra_info={}))
         await create_message(session, conversation.id, "user", message)
         await create_message(session, conversation.id, "assistant", result)
         return result
@@ -50,3 +51,8 @@ async def initialize_conversation(session: Session, user: User, message: str) ->
         return True
     return False
 
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(chat_with_head_agent(User(id=1, name="test"), "안녕"))
+
+# PYTHONPATH=. python agent_service/head/head_agent_service.py
