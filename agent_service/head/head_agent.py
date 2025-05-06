@@ -10,7 +10,6 @@ from custom_logger import get_logger
 from common.utils import (
     create_or_update_prompt,
     get_litellm_model,
-    handle_message_queue,
 )
 from agent_service.head.prompts import get_head_agent_prompt, get_bot_guide
 from agent_service.weather.weather_agent import get_weater_agent
@@ -119,8 +118,8 @@ async def main():
         input_items.append({"role": "user", "content": user_input})
 
         result = await head_agent_runner(input_items, user_info)
-        message_history = handle_message_queue(message_history, user_input, result)
-        print(result)
+        # message_history = handle_message_queue(message_history, user_input, result)
+        # print(result)
 
     for message in message_history:
         print(message)
