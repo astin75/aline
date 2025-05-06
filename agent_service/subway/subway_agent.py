@@ -47,8 +47,7 @@ def load_subway_station_info() -> dict:
     logger.info(f"지하철 역 정보 로드 완료: {len(station_info)}개의 역 정보 로드")
     return station_info
 
-@function_tool
-@weave.op()
+
 async def get_subway_station_info(station_name: str) -> StationSearchResult:
     """지하철 역 정보를 조회하는 함수
     Args:
@@ -71,13 +70,18 @@ async def get_subway_station_info(station_name: str) -> StationSearchResult:
     return match_info
 
 
-@function_tool(
-    description_override="""get_subway_station_info 함수를 통해 조회한'station_name'을 사용해주세요.""",
-)
+@function_tool()
 @weave.op()
 async def get_subway_arrival_info(station_name: str) -> list[SubwayArrivalInfo]:
     """지하철 도착 정보를 조회하는 함수"""
 
+    station_info = await get_subway_station_info(station_name)
+    if station_info.confidence < 0.3:
+        logger.warning(f"지하철 역 정보를 찾을 수 없습니다. station_name: {station_name}")
+        return "지하철 역 정보를 찾을 수 없습니다."
+    else:
+        station_name = station_info.station_name
+    
     base_url = "http://swopenapi.seoul.go.kr/api/subway"
     key = settings.seoul_openapi_key
     size = 5
@@ -137,7 +141,7 @@ def get_subway_agent(model: str = "openai/gpt-4.1-nano") -> Agent:
         name="subway_agent",
         handoff_description="지하철 도착 정보를 제공하는 에이전트",
         instructions=instructions,
-        tools=[get_subway_station_info, get_subway_arrival_info],
+        tools=[get_subway_arrival_info],
         output_guardrails=[subway_agent_output_guardrail],
         model=get_litellm_model(model),
     )

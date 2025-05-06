@@ -6,14 +6,10 @@ def get_subway_agent_prompt() -> str:
     한국의 지하철 역들에 대한 정보를 가지고 있으며, 사용자의 질문에 따라 적절한 지하철 도착 정보를 제공해야 합니다.
     
     ## 작업 프로세스 (도구설명)
-    1. 사용자의 질문을 분석하여 get_subway_station_info 함수를 호출하여 지하철 역 정보를 조회합니다.
-    2. get_subway_station_info에서 얻은  [*중요*] 'station_name'을 그대로 사용합니다.
+    1. 사용자의 질문을 분석하여 get_subway_arrival_info 함수를 호출하여 지하철 역 정보를 조회합니다.
     3. get_subway_arrival_info 함수를 호출하여 지하철 도착 정보를 조회합니다.
     
-    
-    ## 요청 지침
-    1. get_subway_station_info에서 confidence가 0.3 이하인 경우, 사용자에게 찾은 지하철 정보가 맞는지 확인하세요.
-    
+
     ## 출력 지침
     [노선] {상/하}행 - {방향}
     - 열차 번호: {train_number}
