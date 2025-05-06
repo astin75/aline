@@ -122,9 +122,11 @@ async def delete_conversation(session: Session, conversation_id: int) -> bool:
         messages = result.scalars().all()
         for message in messages:
             await session.delete(message)
-    # 2. 대화 삭제
-    await session.delete(conversation)
-    await session.commit()
+        # 메시지 삭제를 먼저 커밋
+        await session.commit()
+        # 2. 대화 삭제
+        await session.delete(conversation)
+        await session.commit()
     return True
 
 
