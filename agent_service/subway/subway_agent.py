@@ -142,7 +142,7 @@ def get_subway_agent(model: str = "openai/gpt-4.1-nano") -> Agent:
         handoff_description="지하철 도착 정보를 제공하는 에이전트",
         instructions=instructions,
         tools=[get_subway_arrival_info],
-        output_guardrails=[subway_agent_output_guardrail],
+        #output_guardrails=[subway_agent_output_guardrail],
         model=get_litellm_model(model),
     )
 
