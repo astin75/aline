@@ -4,6 +4,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from database.db import get_session_with
 from api.service.schedule_service import get_schedules_by_hour_and_minute
 from api.service.user_service import get_user
+from api.service.line_service import push_message_with_aiohttp
 from agent_service.head.head_agent_service import chat_with_head_agent
 from custom_logger import get_logger
 
@@ -29,7 +30,8 @@ async def job_runner():
                 query: {schedule.query}
                 """
                 result = await chat_with_head_agent(user, input_query)
-
+                await push_message_with_aiohttp(user.platform_id, [{"type": "text", "text": result}])
+                
 async def main():
     scheduler.add_job(job_runner, "interval", seconds=2)
     scheduler.start()

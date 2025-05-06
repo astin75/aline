@@ -77,17 +77,3 @@ def get_litellm_model(model_name: str) -> LitellmModel:
         model=model_name,
         api_key=api_key,
     )
-
-
-def handle_message_queue(
-    message_history: list[dict],
-    intput: str,
-    output: str,
-    memory_size: int = 5,
-) -> list[dict]:
-    limit_size = int(memory_size)
-    if len(message_history) >= limit_size:
-        message_history = message_history[2:]
-    message_history.append({"role": "user", "content": intput})
-    message_history.append({"role": "assistant", "content": output})
-    return message_history
