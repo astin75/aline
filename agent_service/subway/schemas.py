@@ -9,6 +9,7 @@ class StationSearchResult(BaseModel):
     station_name: str = Field(description="역 이름")
     confidence: float = Field(description="검색 결과의 신뢰도")
 
+
 class SubwayArrivalInfo(BaseModel):
     """지하철 도착 정보를 나타내는 스키마"""
 
@@ -22,6 +23,10 @@ class SubwayArrivalInfo(BaseModel):
     now_train_location: str = Field(description="현재 열차 위치")
     train_number: str = Field(description="열차 번호")
 
+class SubwayArrivalResponse(BaseModel):
+    """지하철 도착 정보를 나타내는 스키마"""
+    subway_line_name: str = Field(description="지하철 노선명")
+    arrival_info: list[SubwayArrivalInfo] = Field(description="지하철 도착 정보 리스트")
 
 class SubwayAgentFinalOutput(BaseModel):
     """지하철 에이전트 최종 출력 스키마"""

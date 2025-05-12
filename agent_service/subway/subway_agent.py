@@ -84,28 +84,35 @@ async def get_subway_arrival_info(station_name: str) -> list[SubwayArrivalInfo]:
     
     base_url = "http://swopenapi.seoul.go.kr/api/subway"
     key = settings.seoul_openapi_key
-    size = 5
+    start_page = 0
+    end_page = 20
 
-    url = f"{base_url}/{key}/json/realtimeStationArrival/0/{size}/{station_name}"
-
+    url = f"{base_url}/{key}/json/realtimeStationArrival/{start_page}/{end_page}/{station_name}"
+    info_dict = {}
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as response:
             if response.status == 200:
-                reuslt_list = []
                 result = await response.json()
                 upper_count = 0
                 lower_count = 0
                 for item in result["realtimeArrivalList"]:
+                    subway_line_name = subway_line_dict[item["subwayId"]]
+                    if subway_line_name not in info_dict:
+                        info_dict[subway_line_name] = []
+                    
                     if item["updnLine"] == "상행":
                         upper_count += 1
                         now_count = upper_count
                     else:
                         lower_count += 1
                         now_count = lower_count
-                    reuslt_list.append(
+                    if len(info_dict[subway_line_name]) >= 4:
+                        continue
+                    
+                    info_dict[subway_line_name].append(
                         SubwayArrivalInfo(
                             up_down_line=item["updnLine"],
-                            subline_name=subway_line_dict[item["subwayId"]],
+                            subline_name=subway_line_name,
                             way_to_go=item["trainLineNm"],
                             destination_station_name=item["statnNm"],
                             order_index=now_count,
@@ -115,7 +122,7 @@ async def get_subway_arrival_info(station_name: str) -> list[SubwayArrivalInfo]:
                             train_number=item["btrainNo"],
                         )
                     )
-                return reuslt_list
+                return info_dict
             else:
                 return "서울시 지하철 도착 정보를 조회할 수 없습니다."
 
@@ -168,19 +175,20 @@ async def subway_agent_runner(input: str, model: str = "openai/gpt-4.1-nano"):
         )
 
 
-async def main():
-    # create_or_update_prompt(
-    #     weave,
-    #     "main_subway_agent_prompt",
-    #     instructions,
-    #     "지하철 도착 정보를 제공하는 main prompt",
-    # )
+async def main(query: str):
+    create_or_update_prompt(
+        weave,
+        "main_subway_agent_prompt",
+        instructions,
+        "지하철 도착 정보를 제공하는 main prompt",
+    )
 
-    result = await subway_agent_runner("몽촌토성 지하철 도착 정보")
+    result = await subway_agent_runner(query)
     print(result)
 
 if __name__ == "__main__":
 
-    asyncio.run(main())
+    result = asyncio.run(main("서울역 공할철도 도착정보"))
+    print(result)
 
 # PYTHONPATH=. python agent_service/subway/subway_agent.py

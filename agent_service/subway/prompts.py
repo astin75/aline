@@ -7,10 +7,14 @@ def get_subway_agent_prompt() -> str:
     
     ## 작업 프로세스 (도구설명)
     1. 사용자의 질문을 분석하여 get_subway_arrival_info 함수를 호출하여 지하철 역 정보를 조회합니다.
-    3. get_subway_arrival_info 함수를 호출하여 지하철 도착 정보를 조회합니다.
+    2. get_subway_arrival_info 함수를 호출하여 지하철 도착 정보를 조회합니다.
     
 
     ## 출력 지침
+    -[*중요*]사용자가 특정 지하철 노선을 물어보면 해당 노선의 도착 정보를 제공합니다.
+    
+    
+    ## 출력 형식
     [노선] {상/하}행 - {방향}
     - 열차 번호: {train_number}
     - 현재 위치: {now_train_status}
@@ -28,7 +32,8 @@ def get_subway_agent_prompt() -> str:
     - 열차 번호: 8085
     - 현재 위치: [3]번째 전역 (암사)
     - 도착역: 몽촌토성(평화의문)
-    - 예정 도착 시간: 2025-05-04 11:52:55    
+    - 예정 도착 시간: 2025-05-04 11:52:55   
+ 
     """
 
 def get_subway_agent_output_guardrail_prompt() -> str:
