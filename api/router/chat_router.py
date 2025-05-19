@@ -1,23 +1,22 @@
-from typing import List, Optional
-from fastapi import APIRouter, HTTPException, Depends, Request, Header
-from sqlalchemy.ext.asyncio import AsyncSession
-from sqlmodel import select
-import requests
-import aiohttp
+from fastapi import APIRouter, HTTPException, Header, Request
 from linebot.exceptions import InvalidSignatureError
-from database.db import get_session
-
-
+from mongo_db.schema import User
+from agent_service.head.head_agent_service import chat_with_head_agent
+from mongo_db.service import get_user
 from api.service.line_service import line_handler
 
 chat_router = APIRouter(prefix="/chat", tags=["chat"])
 
-# @chat_router.post("/{user_id}")
-# async def chat(user_id: int, message: str, session: AsyncSession = Depends(get_session)):
-#     conversation = await session.get(Conversation, user_id)
-#     if not conversation:
-#         raise HTTPException(status_code=404, detail="대화를 찾을 수 없습니다")
-#     return conversation
+@chat_router.post("/chat")
+async def chat(
+    message: str,
+    user_id: str = None,
+):
+    if user_id:
+        user = await get_user(user_id)
+    else:
+        user = User(platform_id="test-1234")
+    return await chat_with_head_agent(user, message)
 
 
 @chat_router.post("/line-callback")

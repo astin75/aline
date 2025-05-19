@@ -7,8 +7,8 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 from configs import settings
 from custom_logger import get_logger
-from database.db import get_session
-from api.service.user_service import get_user_by_platform_id, create_user
+from mongo_db.connection import get_mongo_client
+from mongo_db.service import get_user, create_or_update_user
 from agent_service.head.head_agent_service import chat_with_head_agent
 from agent_service.head.prompts import get_bot_guide
 
@@ -23,10 +23,11 @@ async def process_message(event: MessageEvent):
     
     user_message = event.message.text
     user_platform_id = event.source.user_id
-    async for session in get_session():
-        user = await get_user_by_platform_id(session, user_platform_id)
+    mongo_client = get_mongo_client()
+    user = await get_user(mongo_client, user_platform_id)
     if not user:
-        user = await create_user(session, user_platform_id, "line")
+        await create_or_update_user(mongo_client, user_platform_id, "line")
+        user = await get_user(mongo_client, user_platform_id)
         first_message = f"""
         안녕하세요. 첫 사용자 시군요? 
         {get_bot_guide()}

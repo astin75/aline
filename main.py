@@ -4,7 +4,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from configs import settings
 from schedule_service.service import scheduler, job_runner
-from database.db import create_db_and_tables
 from custom_logger import get_logger
 
 logger = get_logger(__name__)
@@ -15,9 +14,7 @@ async def lifespan(app: FastAPI):
     scheduler.add_job(job_runner, "interval", seconds=25)
     scheduler.start()
     logger.info("Scheduler started")
-    
-    await create_db_and_tables()
-    logger.info("Database tables created")
+
     yield
     # Clean up contexts
     scheduler.shutdown()
@@ -60,4 +57,4 @@ async def health_check():
     return {"status": "ok"}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=9199)

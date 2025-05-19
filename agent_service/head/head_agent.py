@@ -16,8 +16,7 @@ from agent_service.weather.weather_agent import get_weater_agent
 from agent_service.news.news_agent import get_news_agent
 from agent_service.subway.subway_agent import get_subway_agent
 from agent_service.user.user_agent import get_user_agent
-
-from agent_service.user.schemas import UserContextInfo
+from agent_service.user.schemas import UserInfo
 
 weave.init(project_name="head_agent")
 set_trace_processors([WeaveTracingProcessor()])
@@ -54,7 +53,7 @@ async def get_aline_bot_guide(query: str) -> str:
 
 @weave.op()
 async def head_agent_runner(
-    input: List[dict], user_info: UserContextInfo, model: str = "openai/gpt-4.1-nano"
+    input: List[dict], user_info: UserInfo, model: str = "openai/gpt-4.1-nano"
 ) -> str:
     weather_agent = get_weater_agent(model)
     news_agent = get_news_agent(model)
@@ -104,9 +103,8 @@ async def main():
     )
     message_history = []
     input_items = []
-    user_info = UserContextInfo(
-        user_id=1,
-        user_extra_info={},
+    user_info = UserInfo(
+        platform_id="test",
     )
     for i in range(3):
         input_items = []

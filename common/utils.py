@@ -77,3 +77,9 @@ def get_litellm_model(model_name: str) -> LitellmModel:
         model=model_name,
         api_key=api_key,
     )
+
+def get_now_kst() -> datetime:
+    return datetime.now(timezone(timedelta(hours=9)))
+
+def get_now_timestamp() -> int:
+    return int(datetime.now(timezone(timedelta(hours=9))).timestamp())

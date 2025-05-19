@@ -28,27 +28,28 @@ services:
       - TZ=Asia/Seoul
     command: sh -c "ENV=prod uv run main.py"
     depends_on:
-      - db
+      - mongodb
     restart: unless-stopped
     networks:
       - aline-network
 
-  db:
+
+  mongodb:
     build:
-      context: ./database
+      context: ./mongo_db
       dockerfile: Dockerfile
-    container_name: aline-db
+    container_name: aline-mongodb
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mongodb_data:/data/db
     ports:
-      - "5432:5432"
+      - "27017:27017"
     environment:
       - TZ=Asia/Seoul
     restart: unless-stopped
     networks:
       - aline-network
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "aline_user", "-d", "aline_db"]
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 30s
       timeout: 5s
       retries: 5
@@ -58,4 +59,4 @@ networks:
     driver: bridge
 
 volumes:
-  postgres_data:
+  mongodb_data:
