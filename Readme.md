@@ -1,12 +1,40 @@
 # Aline 프로젝트
 
-## 도커 컴포즈로 실행하기
+## 프로젝트 간단 설명
+Aline은 라인 메신저 기반 챗봇 서비스로, 사용자가 원하는 시간에 다음과 같은 정보를 자동으로 받아볼 수 있습니다:
+	•	최신 뉴스
+	•	날씨 정보
+	•	지하철 도착 정보
+	•	비트코인 시세
+사용자는 시간 설정만 해두면, 원하는 정보를 자동으로 받아볼 수 있어 편리한 개인 맞춤 알림 서비스입니다.
 
-### 사전 요구사항
-- Docker 및 Docker Compose가 설치되어 있어야 합니다.
-- 윈도우의 경우 Docker Desktop을 설치하세요.
-- 리눅스의 경우 Docker Engine과 Docker Compose를 설치하세요.
-- macOS의 경우 Docker Desktop을 설치하세요.
+## 프로젝트 폴더 구조 및 설명
+
+```
+aline/
+├── schedule_service/     # 스케줄 실행을 담당하는 서비스
+│   └── service.py       # 스케줄러 실행 및 작업 관리
+├── api/                 # API 서비스
+│   ├── service/        # API 서비스 구현
+│   └── router/         # API 라우팅
+├── agent_service/       # 각종 에이전트 서비스
+│   ├── schedule/       # 스케줄 관련 에이전트
+│   ├── user/          # 사용자 관련 에이전트
+│   ├── head/          # 헤드 에이전트
+│   ├── subway/        # 지하철 정보 에이전트
+│   ├── news/          # 뉴스 에이전트
+│   └── weather/       # 날씨 정보 에이전트
+├── mongo_db/           # MongoDB 데이터베이스 관련
+│   ├── service.py     # DB 서비스 구현
+│   ├── schema.py      # DB 스키마 정의
+│   └── connection.py  # DB 연결 관리
+└── common/            # 공통 유틸리티
+    ├── utils.py       # 유틸리티 함수
+    ├── schemas.py     # 공통 스키마
+    └── eval_utils.py  # 평가 관련 유틸리티
+```
+
+## 도커 컴포즈로 실행하기
 
 ### 프로젝트 구조
 
@@ -25,62 +53,11 @@
    ```bash
    docker compose up -d
    ```
-   
-   `-d` 옵션은 백그라운드에서 컨테이너를 실행합니다.
-
-3. **서비스 확인**
-
-   다음 명령으로 실행 중인 컨테이너를 확인할 수 있습니다:
-   ```bash
-   docker compose ps
-   ```
-
-4. **로그 확인**
-
-   모든 서비스의 로그를 확인하려면:
-   ```bash
-   docker-compose logs -f
-   ```
-   
-   특정 서비스의 로그만 확인하려면 (예: API):
-   ```bash
-   docker-compose logs -f api
-   ```
-
-5. **서비스 중지**
-
-   실행 중인 서비스를 중지하려면:
-   ```bash
-   docker-compose down
-   ```
-
 ### 접속 정보
 
 - **웹 서비스**: http://localhost
 - **API 문서**: http://localhost/docs
-- **데이터베이스**:
+- **MongoDB**:
   - 호스트: localhost
-  - 포트: 5432
-  - 사용자: aline_user
-  - 비밀번호: aline_password
-  - 데이터베이스: aline_db
+  - 포트: 27017
 
-### 문제 해결
-
-1. **포트 충돌**
-
-   80, 443 또는 5432 포트가 이미 사용 중인 경우, `docker-compose.yaml` 파일에서 포트 매핑을 변경하세요.
-
-2. **컨테이너 재시작**
-
-   특정 서비스만 재시작하려면:
-   ```bash
-   docker-compose restart [서비스명]
-   ```
-
-3. **볼륨 및 데이터 초기화**
-
-   모든 데이터와 볼륨을 삭제하려면:
-   ```bash
-   docker-compose down -v
-   ```
