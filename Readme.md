@@ -61,3 +61,5 @@ aline/
   - 호스트: localhost
   - 포트: 27017
 
+### Aline을 사용해보세요..!
+![Aline QR](assets/aline_qr.png)
