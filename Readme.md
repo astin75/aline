@@ -62,4 +62,4 @@ aline/
   - 포트: 27017
 
 ### Aline을 사용해보세요..!
-![Aline QR](assets/aline_qr.png)
+<img src="assets/aline_qr.png" width="200" height="200" alt="Aline QR">
