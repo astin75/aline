@@ -60,6 +60,3 @@ aline/
 - **MongoDB**:
   - 호스트: localhost
   - 포트: 27017
-
-### Aline을 사용해보세요..!
-<img src="assets/aline_qr.png" width="200" height="200" alt="Aline QR">
